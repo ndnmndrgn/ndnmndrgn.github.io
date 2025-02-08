@@ -109,6 +109,20 @@
     border-radius: 5px;
     cursor: pointer;
     }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: center;
+        bottom: 20px;
+        width: 100%;
+      }
+      
+      #colorChangeBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
     
     button:hover {
     background-color: #aa9b82;
