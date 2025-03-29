@@ -1,0 +1,158 @@
+    body {
+        background-color: #fff4df;
+        
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    h2.section-title {
+        font-family: 'poppins', cursive;
+        color: #000000;
+        text-shadow: 2px 2px #fff;
+    }
+
+    .navbar {
+        background-color: #abe8b7 !important;
+        font-weight: bold;
+    }
+
+    .nav-link {
+        color: #000000 !important;
+        font-size: 18px;
+    }
+
+    .nav-link:hover {
+        color: #ffffff !important;
+    }
+
+    .restaurant-card {
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .restaurant-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        cursor: pointer;
+    }
+
+    .modal-content {
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 3px solid #ffffff;
+    }
+
+    .modal-header {
+        background-color: #f8cd68;
+        color: #000000;
+    }
+
+    .footer {
+        font-weight: bold;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+ }
+      
+      .navbar-nav .bi {
+        font-size: 1.2rem;
+    }
+
+      .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .navbar-nav .bi {
+        font-size: 1.2rem;
+      }
+      
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-nav .bi {
+  font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  background-color: #cefad7;
+}
+
+.dropdown-item {
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+  color: black;
+}
+/* Remove default dropdown arrow */
+.navbar-nav .dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #abe8b7;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show dropdown smoothly */
+.dropdown-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: white;
+    color: black;
+}
+    /* Carousel Image Height */
+#heroCarousel img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Cards Styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
