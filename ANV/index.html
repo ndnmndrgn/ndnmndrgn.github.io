@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our 7th Anniversary 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="password-page">
+    <!-- Floating hearts animation -->
+    <div class="floating-hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Floating flowers -->
+    <div class="floating-flowers">
+        <div class="flower tulip"></div>
+        <div class="flower carnation"></div>
+        <div class="flower tulip"></div>
+        <div class="flower carnation"></div>
+    </div>
+
+    <div class="password-container">
+        <div class="lock-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2C9.243 2 7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5zm3 8V7c0-1.654-1.346-3-3-3S9 5.346 9 7v3h6z"
+                    fill="currentColor" />
+                <circle cx="12" cy="16" r="2" fill="currentColor" />
+            </svg>
+        </div>
+
+        <h1 class="password-title">Our Special Day 💝</h1>
+        <p class="password-subtitle">Enter the date we became one</p>
+
+        <form id="passwordForm" class="password-form">
+            <input type="text" id="passwordInput" class="password-input" placeholder="MM-DD-YYYY" autocomplete="off"
+                maxlength="10">
+            <button type="submit" class="password-button">
+                <span class="button-text">Unlock Our Memories</span>
+                <span class="button-icon">💕</span>
+            </button>
+        </form>
+
+        <p class="password-hint">Hint: The day our forever began ✨</p>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('passwordForm');
+        const input = document.getElementById('passwordInput');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Correct password: November 26, 2018
+        const correctPasswords = ['11-26-2018', '11/26/2018', '112618', '26-11-2018', '26/11/2018'];
+
+        // Auto-format input as user types
+        input.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/[^\d]/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '-' + value.slice(2);
+            }
+            if (value.length >= 5) {
+                value = value.slice(0, 5) + '-' + value.slice(5, 9);
+            }
+            e.target.value = value;
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const password = input.value.trim();
+
+            if (correctPasswords.includes(password)) {
+                // Success animation
+                document.querySelector('.password-container').classList.add('unlocking');
+
+                setTimeout(() => {
+                    window.location.href = 'scrapbook.html';
+                }, 1000);
+            } else {
+                // Error shake animation
+                errorMessage.textContent = '💔 Not quite right, try again sweetie!';
+                errorMessage.style.display = 'block';
+                input.classList.add('shake');
+
+                setTimeout(() => {
+                    input.classList.remove('shake');
+                    errorMessage.style.display = 'none';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+
+</html>
