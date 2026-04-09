@@ -1,0 +1,423 @@
+/* CSS Variables for elegant dark sepia theme */
+:root {
+    --primary-color: #f7d057;
+    /* Brighter Gold for visibility */
+    --primary-dark: #d4af37;
+    --bg-dark: #1f1b18;
+    /* Slightly lighter dark for better depth */
+    --bg-darker: #14110f;
+    --text-light: #ffffff;
+    /* Pure white for maximum readability */
+    --text-muted: #dcd0c4;
+    /* Lighter muted text instead of dark gray */
+    --glass-bg: rgba(45, 40, 36, 0.85);
+    /* More opaque for contrast */
+    --glass-border: rgba(247, 208, 87, 0.3);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    /* Enforces white text */
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-cinzel {
+    font-family: 'Cinzel', serif;
+    color: var(--text-light);
+}
+
+/* Override Bootstrap text colors for dark mode */
+p,
+li,
+span {
+    color: var(--text-light);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Typography styles */
+.text-gradient {
+    background: linear-gradient(45deg, #f7d057, #fff6d9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.title-underline {
+    height: 3px;
+    width: 60px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.max-width-600 {
+    max-width: 600px;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+    background: transparent !important;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--bg-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--bg-darker);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(18, 16, 14, 0.7), rgba(18, 16, 14, 0.9)), url('file:///C:/Users/Hansicoon/.gemini/antigravity/brain/4f46bcfa-9619-4333-8f1f-b49c60037d11/media__1775481423853.jpg') no-repeat center center/cover;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Scroll Overlay Effect - Ensure subsequent sections hide the sticky hero */
+#timeline,
+#quiz,
+footer {
+    background-color: var(--bg-dark);
+    /* Ensure it's opaque */
+    position: relative;
+    z-index: 2;
+}
+
+#influential {
+    position: relative;
+    z-index: 2;
+}
+
+/* Timeline Layout */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--glass-border);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 4px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--bg-dark);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 25px;
+    right: -120px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.right .timeline-date {
+    left: -120px;
+    right: auto;
+}
+
+.interactive-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover .interactive-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Influence section */
+.influence-card {
+    border-top: 4px solid transparent;
+}
+
+.influence-card:hover {
+    border-top: 4px solid var(--primary-color);
+    transform: translateY(-10px);
+}
+
+.influence-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Quiz */
+.quiz-container {
+    min-height: 300px;
+}
+
+.quiz-option {
+    text-align: left;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover:not(:disabled) {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--primary-color);
+}
+
+.quiz-option.correct {
+    background: rgba(40, 167, 69, 0.2);
+    border-color: #28a745;
+}
+
+.quiz-option.wrong {
+    background: rgba(220, 53, 69, 0.2);
+    border-color: #dc3545;
+}
+
+/* Modals */
+.custom-modal .modal-content {
+    background: var(--bg-darker);
+    border: 1px solid var(--glass-border);
+}
+
+.custom-modal .modal-header {
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.custom-modal .modal-title {
+    color: var(--primary-color);
+}
+
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Overrides */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::after {
+        left: 21px;
+    }
+
+    .left,
+    .right {
+        left: 0;
+    }
+
+    .timeline-date {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .right .timeline-date {
+        left: 0;
+    }
+}
+
+/* Timeline Quiz Feedback Styles */
+.neon-green {
+    box-shadow: 0 0 20px #0f0, inset 0 0 15px #0f0 !important;
+    border: 2px solid var(--text-light) !important;
+    border-color: #0f0 !important;
+    animation: neon-glow-green 1.5s ease-in-out infinite alternate;
+}
+
+.neon-red {
+    box-shadow: 0 0 20px #f00, inset 0 0 15px #f00 !important;
+    border: 2px solid var(--text-light) !important;
+    border-color: #f00 !important;
+    animation: neon-glow-red 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow-green {
+    from {
+        box-shadow: 0 0 10px #0f0, inset 0 0 10px #0f0;
+    }
+
+    to {
+        box-shadow: 0 0 25px #0f0, inset 0 0 20px #0f0;
+    }
+}
+
+@keyframes neon-glow-red {
+    from {
+        box-shadow: 0 0 10px #f00, inset 0 0 10px #f00;
+    }
+
+    to {
+        box-shadow: 0 0 25px #f00, inset 0 0 20px #f00;
+    }
+}
+
+.word-span {
+    padding: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+.quiz-mode-select .word-span {
+    cursor: pointer;
+}
+
+.quiz-mode-select .word-span:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+}
